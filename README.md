@@ -1,7 +1,6 @@
 # 简介
 diyweapp目标：基于小程序的Api，能在android，ios端运行小程序代码的运行环境
 
-
 主要步骤：
 1. 框架体系搭建，完成最微信小程序Helloworld运行
 2. 完成MVVM，组件化框架
