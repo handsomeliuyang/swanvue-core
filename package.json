@@ -1,0 +1,19 @@
+{
+  "name": "diyweapp",
+  "description": "diyweapp",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/handsomeliuyang/diyweapp.git"
+  },
+  "scripts": {
+    "dev": "rollup -w -c scripts/config.js --environment TARGET:web-full-dev"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^0.67.4"
+  },
+  "dependencies": {
+    "rollup-watch": "^4.3.1"
+  }
+}
