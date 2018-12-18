@@ -97,4 +97,30 @@ function getOuterHTML (el: Element): string {
 
 Vue.compile = compileToFunctions
 
+Vue.Page = function Page(options){
+
+  var methods = {
+    setData: function (newData) {
+      for(var key in newData){
+        this.data[key] = newData[key];
+      }
+    }
+  };
+
+  for(var key in options){
+    if(options[key] instanceof Function) {
+      methods[key] = options[key];
+    }
+  }
+
+  new Vue({
+    el: '#app',
+    data: options.data,
+    created: function () {
+      this.data = this._data;
+    },
+    methods: methods
+  })
+}
+
 export default Vue

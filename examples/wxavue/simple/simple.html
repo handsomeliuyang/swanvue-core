@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>simple</title>
+
+  <link rel="stylesheet" href="./style.css">
+  <script src="../../../dist/wxavue.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+  <view>
+    <view class="usermotto">
+      <text>{{message}}</text>
+      <button bindtap="reverseMessage">逆转消息</button>
+    </view>
+  </view>
+</div>
+
+<script>
+
+  Vue.Page({
+    data: {
+      message: 'Hello WxaVue!',
+    },
+    //事件处理函数
+    reverseMessage: function () {
+      this.setData({ message: this.data.message.split('').reverse().join('') })
+    }
+  });
+
+</script>
+
+</body>
+</html>

@@ -40,6 +40,7 @@ let postTransforms
 let platformIsPreTag
 let platformMustUseProp
 let platformGetTagNamespace
+let platformHookParseStart
 
 type Attr = { name: string; value: string };
 
@@ -70,6 +71,7 @@ export function parse (
   platformIsPreTag = options.isPreTag || no
   platformMustUseProp = options.mustUseProp || no
   platformGetTagNamespace = options.getTagNamespace || no
+  platformHookParseStart = options.hookParseStart || no
 
   transforms = pluckModuleFunction(options.modules, 'transformNode')
   preTransforms = pluckModuleFunction(options.modules, 'preTransformNode')
@@ -115,6 +117,14 @@ export function parse (
     shouldDecodeNewlinesForHref: options.shouldDecodeNewlinesForHref,
     shouldKeepComment: options.comments,
     start (tag, attrs, unary) {
+
+      const newStart = platformHookParseStart(tag, attrs, unary)
+      if (newStart) {
+        tag = newStart.tag
+        attrs = newStart.attrs
+        unary = newStart.unary
+      }
+
       // check namespace.
       // inherit parent ns if there is one
       const ns = (currentParent && currentParent.ns) || platformGetTagNamespace(tag)
