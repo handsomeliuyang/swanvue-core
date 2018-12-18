@@ -1,14 +1,23 @@
+import { initMixin } from './init'
+import { stateMixin } from './state'
+import { renderMixin } from './render'
+import { eventsMixin } from './events'
+import { lifecycleMixin } from './lifecycle'
+import { warn } from '../util/index'
 
-
-function DiyVue (options) {
-
-    // 此方法构造函数，只能通过new来构建对象，不能直接调用，如何区分，通过this来区分
-    if (process.env.NODE_ENV !== 'production' && !(this instanceof DiyVue)){
-        warn('DiyVue is a constructor and should be called with the `new` keyword')
-    }
-
-
-
+function Vue (options) {
+  if (process.env.NODE_ENV !== 'production' &&
+    !(this instanceof Vue)
+  ) {
+    warn('Vue is a constructor and should be called with the `new` keyword')
+  }
+  this._init(options)
 }
 
-export default DiyVue
+initMixin(Vue)
+stateMixin(Vue)
+eventsMixin(Vue)
+lifecycleMixin(Vue)
+renderMixin(Vue)
+
+export default Vue

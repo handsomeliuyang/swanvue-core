@@ -1,11 +1,23 @@
-# 简介
-diyweapp目标：基于小程序的Api，能在android，ios端运行小程序代码的运行环境
 
-主要步骤：
-1. 框架体系搭建，完成最微信小程序Helloworld运行
-2. 完成MVVM，组件化框架
-3. 支持小程序的其他UI组件
-4. 支持小程序的客户端的提供的特有Api
 
-diyweapp主要包括：
-1. DiyVue：是diyweapp项目的核心，是参考Vue的一套组件化框架
+
+# wxavue
+> Vue.js 小程序版, fork 自 [vuejs/vue@2.5.21](https://github.com/vuejs/vue)，hook template 的解析，新增platform
+
+`wxavue` 是一个支持微信小程序 Api，使用 [Vue.js](https://vuejs.org) 为运行内核的前端框架。框架基于 `Vue.js` 核心，`wxavue` 修改了 `Vue.js` 的 runtime 和 compiler 实现，使其能支持小程序的Api，直接支持运行小程序的代码。
+
+## 名称由来
+
+`wxavue`：Wxapp Api Vue Kernel
+
+## 最终目标
+
+1. 基于MVVM框架Vue，实现一套小程序框架，渲染层与逻辑层分离，提升性能的同学，实现可控性
+2. 完全兼容运行微信小程序
+
+## 思路
+
+1. wxml 转换为 Vue's AST
+2. 基于 Vue 对象，封装 Page 函数
+3. 打包工程，实现工程目录的转换
+4. 逐步完善小程序的 component 和 api
