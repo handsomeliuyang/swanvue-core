@@ -165,7 +165,16 @@ const builds = {
     dest: resolve('packages/weex-template-compiler/build.js'),
     format: 'cjs',
     external: Object.keys(require('../packages/weex-template-compiler/package.json').dependencies)
-  }
+  },
+  // "dev:wxavue": "rollup -w -c scripts/config.js --environment TARGET:wxavue-full",
+  'wxavue-full': {
+    entry: resolve('wxavue/entry-runtime-with-compiler.js'),
+    dest: resolve('dist/wxavue.js'),
+    format: 'umd',
+    env: 'development',
+    alias: { he: './entity-decoder' },
+    banner
+  },
 }
 
 function genConfig (name) {
