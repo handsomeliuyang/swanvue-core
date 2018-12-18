@@ -38,14 +38,15 @@ export const isReservedTag = (tag: string): ?boolean => {
 }
 
 export function getTagNamespace (tag: string): ?string {
-  if (isSVG(tag)) {
-    return 'svg'
-  }
-  // basic support for MathML
-  // note it doesn't support other MathML elements being component roots
-  if (tag === 'math') {
-    return 'math'
-  }
+  // 微信不支持小svg
+  // if (isSVG(tag)) {
+  //   return 'svg'
+  // }
+  // // basic support for MathML
+  // // note it doesn't support other MathML elements being component roots
+  // if (tag === 'math') {
+  //   return 'math'
+  // }
 }
 
 const unknownElementCache = Object.create(null)
