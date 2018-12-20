@@ -21,3 +21,18 @@
 2. 基于 Vue 对象，封装 Page 函数
 3. 打包工程，实现工程目录的转换
 4. 逐步完善小程序的 component 和 api
+
+## build
+```shell
+npm run dev:wxavue
+```
+
+## example
+1. simple：examples/wxavue/simple
+2. wxdemo：examples/wxavue/wxdemo
+
+## 技术交流群
+
+群名称：wxavue-交流群
+
+群   号：733617647
