@@ -31,6 +31,20 @@ npm run dev:wxavue
 1. simple：examples/wxavue/simple
 2. wxdemo：examples/wxavue/wxdemo
 
+## TODO列表
+1. 项目初始化  —— <font color="#ff0000">done</font>
+2. 添加wxavue platform，并能正常打包 —— <font color="#ff0000">done</font>
+3. parser添加hook api，对外输出Page函数，创建一个simple demo — <font color="#ff0000">done</font>
+4. 不支持svg和math里的标签，与view会发生冲突，通过module实现hook parser，替换wxml的标签 —— <font color="#ff0000">done</font>
+5. wxml标签支持，并转换为Vue支持的AST语法树：
+  ```
+  1. bindtap="fun" 转换为 v-on:click="fun($event)" --- done
+  2. xxx="item-{{id}}" 转换为 v-bind:xxx="'item-'+(id)" --- done
+  ```
+6. 按微信小程序的navigator，生成Vue的内置组件navigator --- <font color="#ff0000">done</font>
+7. wxdemo例子，使用webpack来构建，开始期间，使用webpack-dev-server来调试 --- doing
+8. 实现data不用预初始化 --- undo
+
 ## 技术交流群
 
 群名称：wxavue-交流群
