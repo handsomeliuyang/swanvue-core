@@ -42,7 +42,11 @@ npm run dev:wxavue
   2. xxx="item-{{id}}" 转换为 v-bind:xxx="'item-'+(id)" --- done
   ```
 6. 按微信小程序的navigator，生成Vue的内置组件navigator --- done
-7. wxdemo例子，使用webpack来构建，开始期间，使用webpack-dev-server来调试 --- doing
+7. wxdemo改进：
+  1. 使用webpack打包 ---- done
+  2. vue-router搭建框架 --- undo
+  3. 读取小程序的app.json的pages，当路由配置 --- undo
+  4. template使用precompile --- undo
 8. 实现data不用预初始化 --- undo
 
 ## 技术交流群
