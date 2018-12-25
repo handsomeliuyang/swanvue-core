@@ -67,6 +67,10 @@ function preTransformNode (el: ASTElement, options: CompilerOptions) {
     el.tag = 'div';
   }
 
+  if(el.tag === 'image'){
+    el.tag = 'img';
+  }
+
   // bindtap ==> v-on:click
   transformBindtap(el, options)
 

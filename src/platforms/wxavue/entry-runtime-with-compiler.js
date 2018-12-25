@@ -113,14 +113,25 @@ Vue.Page = function Page(options){
     }
   }
 
-  new Vue({
-    el: '#app',
-    data: options.data,
+  return {
+    data: function(){
+      return options.data;
+    },
     created: function () {
       this.data = this._data;
     },
-    methods: methods
-  })
+    methods: methods,
+    template: options.template
+  }
+
+  // new Vue({
+  //   el: '#app',
+  //   data: options.data,
+  //   created: function () {
+  //     this.data = this._data;
+  //   },
+  //   methods: methods
+  // })
 }
 
 export default Vue

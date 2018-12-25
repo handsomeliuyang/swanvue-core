@@ -11,7 +11,6 @@ import modules from './modules/index'
 import directives from './directives/index'
 import { genStaticKeys } from 'shared/util'
 import { isUnaryTag, canBeLeftOpenTag } from './util'
-import { hookParseStart } from './parse/wxml-parser'
 
 export const baseOptions: CompilerOptions = {
   expectHTML: true,
@@ -23,6 +22,5 @@ export const baseOptions: CompilerOptions = {
   canBeLeftOpenTag,
   isReservedTag,
   getTagNamespace,
-  staticKeys: genStaticKeys(modules),
-  hookParseStart
+  staticKeys: genStaticKeys(modules)
 }

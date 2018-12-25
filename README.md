@@ -40,13 +40,19 @@ npm run dev:wxavue
   ```
   1. bindtap="fun" 转换为 v-on:click="fun($event)" --- done
   2. xxx="item-{{id}}" 转换为 v-bind:xxx="'item-'+(id)" --- done
+  3. view 转换为 div ---- done
+  4. text 转换为 div ---- done
+  5. image 转换为 img ---- done
   ```
 6. 按微信小程序的navigator，生成Vue的内置组件navigator --- done
 7. wxdemo改进：
   1. 使用webpack打包 ---- done
-  2. vue-router搭建框架 --- undo
-  3. 读取小程序的app.json的pages，当路由配置 --- undo
-  4. template使用precompile --- undo
+  2. 图片统一放置在pages同级目录images里 --- done
+  3. 读取小程序的app.json的pages，当路由配置 --- done
+  4. vue-router搭建框架 --- done
+  5. 使用Vue Single File Components --- undo
+  6. 修改vue-loader的compiler --- undo
+  7. template使用precompile --- undo
 8. 实现data不用预初始化 --- undo
 
 ## 技术交流群
