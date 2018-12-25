@@ -1,4 +1,4 @@
-import Vue from '../../../../../dist/wxavue.js'
+import Vue from '../../../../../../dist/wxavue.js'
 import './index.css'
 
 var type = [

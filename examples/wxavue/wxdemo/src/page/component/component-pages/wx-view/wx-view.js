@@ -1,4 +1,4 @@
-import Vue from '../../../../../../../dist/wxavue.js'
+import Vue from '../../../../../../../../dist/wxavue.js'
 import './wx-view.css'
 
 export default Vue.Page({

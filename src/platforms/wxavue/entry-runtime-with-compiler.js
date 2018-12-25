@@ -113,6 +113,17 @@ Vue.Page = function Page(options){
     }
   }
 
+  // return () => Promise.resolve({
+  //   data: function(){
+  //     return options.data;
+  //   },
+  //   created: function () {
+  //     this.data = this._data;
+  //   },
+  //   methods: methods,
+  //   template: options.template
+  // })
+
   return {
     data: function(){
       return options.data;

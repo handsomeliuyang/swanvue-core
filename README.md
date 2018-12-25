@@ -50,6 +50,7 @@ npm run dev:wxavue
   2. 图片统一放置在pages同级目录images里 --- done
   3. 读取小程序的app.json的pages，当路由配置 --- done
   4. vue-router搭建框架 --- done
+  5. 通过pages生成router与webpack的entry --- done
   5. 使用Vue Single File Components --- undo
   6. 修改vue-loader的compiler --- undo
   7. template使用precompile --- undo

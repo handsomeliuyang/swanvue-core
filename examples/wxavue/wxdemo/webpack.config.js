@@ -1,18 +1,17 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+// const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 // 读取所有的Pages配置，每个Page生成一个单独的bundle文件
 var entry = {
-  main: './vuesrc/main.js'
+  main: './src/main.js'
 }
 var fs = require('fs');
-var wxConfig = JSON.parse(fs.readFileSync('./app.json', 'utf8'));
+var wxConfig = JSON.parse(fs.readFileSync('./src/app.json', 'utf8'));
 for(var i=0; i<wxConfig.pages.length; i++){
-  entry[wxConfig.pages[i]] = './' + wxConfig.pages[i];
+  entry[wxConfig.pages[i]] = './src/' + wxConfig.pages[i];
 }
 
 module.exports = {
@@ -33,25 +32,15 @@ module.exports = {
       {
         test: /\.css$/,
         use: [ 'style-loader', 'css-loader' ]
-      },
-      // {
-      //   test: /\.(png|svg|jpg|gif)$/,
-      //   use: 'file-loader',
-      // },
-      {
-        test: /\.vue$/,
-        use: ['vue-loader']
       }
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title:'exdemo'
     }),
-    new VueLoaderPlugin(),
     new CopyWebpackPlugin([
-      {from: 'image/**/*', force: true}
+      {from: 'src/image', to: 'image', force: true}
     ])
   ]
 };
