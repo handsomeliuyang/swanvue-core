@@ -44,7 +44,7 @@ npm run dev:wxavue
   4. text 转换为 div ---- done
   5. image 转换为 img ---- done
   ```
-6. 按微信小程序的navigator，生成Vue的内置组件navigator --- done
+6. 按微信小程序的navigator，结合vue-router, 生成Vue的内置组件navigator --- done
 7. wxdemo改进：
   1. 使用webpack打包 ---- done
   2. 图片统一放置在pages同级目录images里 --- done

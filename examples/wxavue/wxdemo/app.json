@@ -1,6 +1,7 @@
 {
   "pages": [
-    "page/component/index"
+    "page/component/index",
+    "page/component/component-pages/wx-view/wx-view"
   ],
   "window": {
     "navigationBarTextStyle": "black",

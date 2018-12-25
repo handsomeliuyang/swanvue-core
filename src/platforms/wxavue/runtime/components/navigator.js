@@ -27,7 +27,10 @@ export default {
       {
         on: {
           click: function (event) {
-            window.open(self.url);
+            var curPath = self.$router.currentRoute.path;
+            var curDir = curPath.substring(0, curPath.lastIndexOf('/'));
+
+            self.$router.push({ path: `${curDir}/${self.url}`});
           }
         }
       },
