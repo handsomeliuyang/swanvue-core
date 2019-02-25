@@ -6,3 +6,4 @@ output/
 **/.DS_Store
 test/coverage/
 .idea
+test/node_modules/
